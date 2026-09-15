@@ -3,452 +3,426 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basketball — An Informational Guide</title>
+<title>The Houseplant Renaissance — A Botanical Reader</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#15181C;
-    --panel:#1D2227;
-    --panel-2:#242A30;
-    --cream:#ECE6D8;
-    --wood:#CC8A3F;
-    --wood-dim:#8A6535;
-    --line:#3B424A;
-    --slate:#8B93A0;
-    --chalk:#C9C2AE;
+    --sage:#e9efe3;
+    --sage-deep:#d3e0c7;
+    --leaf:#4c6b3f;
+    --leaf-dark:#31462a;
+    --terracotta:#c17a54;
+    --blush:#e8b4bc;
+    --cream:#fbf8f1;
+    --ink:#2b3324;
+    --ink-soft:#54604a;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--ink);
-    color:var(--cream);
-    font-family:'Inter', sans-serif;
-    font-size:16.5px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Nunito', sans-serif;
+    line-height:1.75;
   }
-  h1,h2,h3{
-    font-family:'Space Grotesk', sans-serif;
+  h1,h2,h3,.disp{
+    font-family:'Cormorant Garamond', serif;
     font-weight:600;
-    margin:0;
-    line-height:1.08;
-    letter-spacing:-0.01em;
-    color:var(--cream);
+    color:var(--leaf-dark);
   }
-  p{margin:0 0 1.1em 0;color:var(--chalk);}
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
-  .measure{max-width:640px;}
-  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{ max-width:740px; margin:0 auto; padding:0 24px; }
 
-  /* Quarter tag */
-  .qtag{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    letter-spacing:0.02em;
-    color:var(--wood);
-    margin-bottom:22px;
+  header.top{
+    padding:18px 0;
+    border-bottom:1px solid var(--sage-deep);
   }
-  .qtag .dot{width:7px;height:7px;border-radius:50%;background:var(--wood);}
-  .qtag span{color:var(--slate);}
+  header.top .row{
+    max-width:740px; margin:0 auto; padding:0 24px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.95rem; color:var(--ink-soft);
+  }
+  header.top .row .leaf-mark{ color:var(--leaf); font-style:normal; }
 
-  /* Hero */
-  .hero{
-    position:relative;
-    min-height:94vh;
-    display:flex;
-    align-items:flex-end;
-  }
-  .hero img{
-    position:absolute;inset:0;
-    width:100%;height:100%;
-    object-fit:cover;
-    object-position:center 40%;
-  }
-  .hero::before{
-    content:"";
-    position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(21,24,28,0.25) 0%, rgba(21,24,28,0.55) 50%, rgba(21,24,28,0.97) 100%);
-  }
-  .hero-inner{
-    position:relative;
-    width:100%;
-    padding:0 32px 60px;
-    max-width:1120px;
-    margin:0 auto;
-  }
-  .hero-eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--wood);
-    margin-bottom:18px;
+  .hero{ padding:50px 0 28px; text-align:center; }
+  .hero .sprig{ margin: 0 auto 18px; width:70px; }
+  .hero .kicker{
+    font-family:'Nunito',sans-serif;
+    letter-spacing:0.04em;
+    font-size:0.82rem;
+    color:var(--terracotta);
+    margin-bottom:14px;
   }
   .hero h1{
-    font-size:clamp(52px, 9vw, 118px);
+    font-size:clamp(2.6rem,7vw,4.4rem);
+    line-height:1.05;
+    margin:0 0 22px;
+    font-style:italic;
   }
-  .hero-sub{
-    margin-top:20px;
-    max-width:540px;
-    font-size:18px;
-    color:var(--chalk);
+  .hero .dek{
+    font-family:'Nunito', sans-serif;
+    font-size:1.1rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:0 auto 24px;
   }
-  .stat-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:44px;
-    margin-top:46px;
-    padding-top:26px;
-    border-top:1px dashed var(--line);
+  .hero .byline{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:1.05rem;
   }
-  .stat b{
+
+  figure{ margin:38px 0; }
+  figure svg{ display:block; width:100%; height:auto; border-radius:4px; }
+  figcaption{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1rem;
+    color:var(--ink-soft);
+    margin-top:12px;
+    text-align:center;
+  }
+
+  .divider{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    margin:52px 0 22px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--leaf);
+    font-size:1.15rem;
+  }
+  .divider::before,.divider::after{
+    content:""; width:60px; height:1px; background:var(--sage-deep);
+  }
+
+  section h2{
+    font-size:clamp(1.8rem,4.5vw,2.3rem);
+    margin:0 0 12px;
+    text-align:center;
+    font-style:italic;
+  }
+  .qnum{ display:block; font-family:'Nunito',sans-serif; font-style:normal; color:var(--terracotta); font-size:0.8rem; letter-spacing:0.05em; margin-bottom:6px; }
+  p{ margin:0 0 18px; color:var(--ink-soft); }
+  p strong{ color:var(--ink); }
+  .lede{ color:var(--ink); font-size:1.1rem; }
+  mark{ background:var(--blush); padding:0 4px; border-radius:2px; }
+
+  .stat-strip{ display:flex; flex-wrap:wrap; gap:18px; margin:28px 0 36px; justify-content:center; }
+  .stat-card{
+    flex:1 1 150px;
+    background:var(--sage);
+    border-radius:50% 50% 6px 6px / 30% 30% 6px 6px;
+    padding:24px 16px 18px;
+    text-align:center;
+  }
+  .stat-card .big{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:2.1rem; color:var(--leaf); display:block; line-height:1; }
+  .stat-card .lbl{ font-size:0.85rem; color:var(--ink-soft); display:block; margin-top:8px; }
+
+  .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin:22px 0 34px; }
+  .card{
+    background:var(--sage);
+    border-radius:12px;
+    padding:20px 20px 18px;
+    border-left: 4px solid var(--leaf);
+  }
+  .card:nth-child(2){ border-left-color: var(--terracotta); }
+  .card:nth-child(3){ border-left-color: var(--blush); }
+  .card:nth-child(4){ border-left-color: var(--leaf-dark); }
+  .card h3{ font-size:1.2rem; margin:0 0 6px; font-style:italic; }
+  .card p{ font-size:0.95rem; margin:0; }
+
+  blockquote{
+    margin:36px 0; padding:18px 28px;
+    background:var(--sage-deep);
+    border-radius:12px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--leaf-dark);
+    line-height:1.4;
+    text-align:center;
+  }
+
+  .plant-grid{ display:flex; flex-wrap:wrap; gap:12px; margin:18px 0 34px; justify-content:center; }
+  .plant-chip{
+    background:var(--cream);
+    border:1.5px solid var(--leaf);
+    border-radius:20px;
+    padding:8px 16px;
+    font-family:'Nunito',sans-serif;
+    font-size:0.92rem;
+    color:var(--leaf-dark);
+  }
+
+  .steps{ list-style:none; padding:0; margin:18px 0 34px; counter-reset: step; }
+  .steps li{
+    counter-increment: step;
+    position:relative;
+    background:var(--sage);
+    border-radius:12px;
+    padding:16px 18px 16px 58px;
+    margin-bottom:14px;
+  }
+  .steps li::before{
+    content: counter(step);
+    position:absolute; left:14px; top:16px;
+    width:30px; height:30px;
+    background:var(--leaf); color:#fff;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem;
+  }
+  .steps h3{ margin:0 0 4px; font-size:1.1rem; font-style:italic; }
+  .steps p{ margin:0; font-size:0.95rem; }
+
+  .checklist{ list-style:none; padding:0; margin:18px 0 30px; }
+  .checklist li{ display:flex; align-items:flex-start; gap:12px; margin-bottom:13px; color:var(--ink-soft); }
+  .checklist .leaf-box{
+    flex:0 0 20px; color:var(--leaf); font-size:1.2rem; line-height:1.4; margin-top:-2px;
+  }
+
+  footer{
+    background:var(--leaf-dark);
+    color:#d7e2cc;
+    margin-top:56px;
+    padding:34px 0 54px;
+    font-size:0.92rem;
+    text-align:center;
+  }
+  footer .tag{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--sage);
     display:block;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:28px;
-    font-weight:600;
-    color:var(--cream);
+    margin-bottom:14px;
   }
-  .stat span{
-    display:block;
-    font-size:12.5px;
-    color:var(--slate);
-    margin-top:4px;
-  }
+  footer p{ color:#c3d1b6; max-width:52ch; margin:0 auto; }
 
-  section{padding:100px 0;}
-  section.tight{padding:76px 0;}
-  .grid-2{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-  }
-  .grid-2.rev .col-img{order:2;}
-  .col-text h2{font-size:clamp(30px,3.6vw,46px);margin-bottom:22px;}
-  figure{margin:0;}
-  figcaption{font-size:13px;color:var(--slate);margin-top:10px;}
-  .photo{border-radius:2px;overflow:hidden;border:1px solid var(--line);}
-  .photo img{width:100%;height:100%;object-fit:cover;}
-
-  hr.rule{border:none;border-top:1px solid var(--line);margin:0;}
-
-  .lede{padding:90px 0 40px;}
-  .lede p.big{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:clamp(22px,2.6vw,30px);
-    font-weight:500;
-    line-height:1.42;
-    max-width:820px;
-    color:var(--cream);
-  }
-
-  /* Rule ledger (origins timeline) */
-  .ledger{
-    margin-top:36px;
-    border-top:1px solid var(--line);
-  }
-  .ledger-row{
-    display:grid;
-    grid-template-columns:110px 1fr;
-    gap:24px;
-    padding:20px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .ledger-row .yr{
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--wood);
-    font-size:15px;
-    padding-top:2px;
-  }
-  .ledger-row p{margin:0;font-size:15px;}
-
-  /* Shot physics facts */
-  .fact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-    margin-top:44px;
-  }
-  .fact{
-    background:var(--panel);
-    padding:30px 26px;
-  }
-  .fact b.num{
-    display:block;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:32px;
-    color:var(--wood);
-    margin-bottom:10px;
-  }
-  .fact p{font-size:14.5px;margin:0;color:var(--chalk);}
-
-  /* Court diagram section */
-  .diagram-wrap{
-    background:var(--panel);
-    border:1px solid var(--line);
-    padding:40px;
-    margin-top:44px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-  }
-  .diagram-wrap svg{width:100%;height:auto;}
-  .leg{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:13.5px;
-    color:var(--chalk);
-    margin-bottom:10px;
-  }
-  .leg .sw{width:14px;height:14px;border-radius:3px;flex-shrink:0;}
-
-  .stat-line{
-    display:flex;
-    justify-content:space-between;
-    padding:12px 0;
-    border-bottom:1px solid var(--line);
-    font-size:14.5px;
-  }
-  .stat-line span:last-child{font-family:'IBM Plex Mono', monospace;color:var(--wood);}
-
-  /* Global section cards */
-  .globe-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-    margin-top:20px;
-  }
-  .globe-card{background:var(--panel);padding:28px 26px;}
-  .globe-card h3{font-size:19px;margin-bottom:8px;}
-  .globe-card p{font-size:14.5px;margin:0;}
-
-  .finish-media{border:1px solid var(--line);overflow:hidden;margin-top:44px;}
-  .finish-media img{width:100%;max-height:440px;object-fit:cover;}
-
-  footer{padding:48px 0 64px;border-top:1px solid var(--line);}
-  footer .wrap{
-    display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
-    font-size:13px;color:var(--slate);
-  }
-
-  @media (max-width:820px){
-    .grid-2, .diagram-wrap{grid-template-columns:1fr;gap:30px;}
-    .grid-2.rev .col-img{order:0;}
-    .fact-grid, .globe-grid{grid-template-columns:1fr;}
-    section{padding:68px 0;}
-    .ledger-row{grid-template-columns:80px 1fr;}
-  }
   @media (max-width:560px){
-    .wrap{padding:0 22px;}
-    .hero-inner{padding:0 22px 40px;}
+    .cards{ grid-template-columns:1fr; }
   }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <img src="https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&w=1600&h=1400&dpr=1" alt="Silhouettes of basketball players jumping for the ball at sunset by the ocean">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">// AN INFORMATIONAL GUIDE</div>
-    <h1>Basketball</h1>
-    <p class="hero-sub">Invented in a single afternoon to solve a scheduling problem, and turned since into the most efficient shooting sport ever measured.</p>
-    <div class="stat-row">
-      <div class="stat"><b>1891</b><span>Year it was invented</span></div>
-      <div class="stat"><b>10 ft</b><span>Rim height, unchanged since</span></div>
-      <div class="stat"><b>23'9"</b><span>NBA three-point line, top of key</span></div>
+<header class="top">
+  <div class="row">
+    <span><span class="leaf-mark">❧</span> the windowsill reader — issue 5</span>
+    <span>plants & people</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <svg class="sprig" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 100 C40 70 40 40 40 10" stroke="#4c6b3f" stroke-width="2" fill="none"/>
+      <path d="M40 30 C25 22 15 25 8 15 C20 15 30 20 40 30" fill="#4c6b3f"/>
+      <path d="M40 50 C55 42 65 45 72 35 C60 35 50 40 40 50" fill="#4c6b3f"/>
+      <path d="M40 70 C25 62 15 65 8 55 C20 55 30 60 40 70" fill="#6d8c5a"/>
+    </svg>
+    <span class="kicker">READ TIME · 8 MINUTES</span>
+    <h1>The Houseplant Renaissance</h1>
+    <p class="dek">Somewhere between the concrete and the constant screens, a lot of people quietly started collecting leaves again. Here's why plants became the decade's most unlikely comfort object — and how to keep yours alive.</p>
+    <p class="byline">for anyone with a windowsill and mild ambition</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 740 420" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="740" height="420" fill="#e9efe3"/>
+      <!-- window frame -->
+      <rect x="70" y="40" width="600" height="340" fill="#fbf8f1" stroke="#2b3324" stroke-width="3"/>
+      <line x1="370" y1="40" x2="370" y2="380" stroke="#2b3324" stroke-width="3"/>
+      <line x1="70" y1="210" x2="670" y2="210" stroke="#2b3324" stroke-width="3"/>
+      <!-- sky through window -->
+      <rect x="76" y="46" width="288" height="158" fill="#dfe9f2"/>
+      <rect x="376" y="46" width="288" height="158" fill="#dfe9f2"/>
+      <circle cx="560" cy="90" r="26" fill="#f6e2a0"/>
+      <!-- shelf with plants across bottom half -->
+      <rect x="76" y="330" width="588" height="14" fill="#c17a54"/>
+      <!-- monstera pot -->
+      <g transform="translate(150,300)">
+        <path d="M-20 40 L20 40 L15 0 L-15 0 Z" fill="#c17a54"/>
+        <path d="M0 0 C-30 -20 -40 -55 -15 -70 C-5 -50 5 -50 15 -70 C40 -55 30 -20 0 0" fill="#4c6b3f"/>
+        <path d="M0 -70 C0 -50 0 -30 0 0" stroke="#31462a" stroke-width="2" fill="none"/>
+      </g>
+      <!-- fiddle leaf -->
+      <g transform="translate(310,300)">
+        <path d="M-18 40 L18 40 L14 -4 L-14 -4 Z" fill="#e8b4bc"/>
+        <path d="M0 -4 C0 -30 0 -60 0 -95" stroke="#31462a" stroke-width="3" fill="none"/>
+        <ellipse cx="-14" cy="-70" rx="16" ry="24" fill="#6d8c5a" transform="rotate(-20 -14 -70)"/>
+        <ellipse cx="14" cy="-50" rx="16" ry="24" fill="#4c6b3f" transform="rotate(20 14 -50)"/>
+        <ellipse cx="-10" cy="-95" rx="14" ry="20" fill="#4c6b3f" transform="rotate(-10 -10 -95)"/>
+      </g>
+      <!-- snake plant -->
+      <g transform="translate(460,300)">
+        <path d="M-18 40 L18 40 L14 0 L-14 0 Z" fill="#4c6b3f"/>
+        <path d="M-10 0 C-12 -40 -8 -70 -6 -90" stroke="#31462a" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M0 0 C0 -50 2 -80 2 -100" stroke="#4c6b3f" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M10 0 C12 -35 10 -60 8 -80" stroke="#6d8c5a" stroke-width="6" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- trailing pothos hanging -->
+      <g transform="translate(590,300)">
+        <path d="M-16 40 L16 40 L12 0 L-12 0 Z" fill="#c17a54"/>
+        <path d="M-6 0 C-20 20 -18 50 -6 60" stroke="#4c6b3f" stroke-width="3" fill="none"/>
+        <path d="M6 0 C22 25 18 55 10 68" stroke="#6d8c5a" stroke-width="3" fill="none"/>
+        <ellipse cx="-16" cy="20" rx="8" ry="10" fill="#6d8c5a"/>
+        <ellipse cx="20" cy="35" rx="8" ry="10" fill="#4c6b3f"/>
+      </g>
+      <!-- watering can -->
+      <g transform="translate(215,352)">
+        <rect x="-14" y="-16" width="28" height="16" rx="4" fill="#c17a54"/>
+        <path d="M14 -12 L34 -20" stroke="#c17a54" stroke-width="6" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <figcaption>a whole indoor jungle can fit on one windowsill — that's most of the appeal.</figcaption>
+  </figure>
+
+  <p class="lede">Somewhere in the last decade, houseplants quietly became one of the most-bought, most-photographed, most-obsessed-over categories among young renters worldwide. Not because anyone needed them. Because, oddly, a lot of people found that <mark>a living thing that depends on you</mark> — and forgives you when you forget it for a week — does something for the nervous system that a to-do list app never could.</p>
+
+  <p>Call it a plant parent era, an indoor jungle trend, whatever the hashtag of the month is — underneath the aesthetic, it's really a story about small apartments, screen fatigue, and a generation looking for something slow, tactile, and quietly alive to take care of.</p>
+
+  <div class="stat-strip">
+    <div class="stat-card">
+      <span class="big">66%</span>
+      <span class="lbl">of U.S. millennials identify as plant owners, per National Gardening Association survey data</span>
+    </div>
+    <div class="stat-card">
+      <span class="big">↓ stress</span>
+      <span class="lbl">measurable drop in cortisol and blood pressure recorded in short plant-care and gardening studies</span>
+    </div>
+    <div class="stat-card">
+      <span class="big">~50%</span>
+      <span class="lbl">rise in global houseplant market value over the last several years, per industry market reports</span>
     </div>
   </div>
+
+  <div class="divider">why now</div>
+
+  <section id="why">
+    <h2><span class="qnum">CHAPTER ONE</span>Why leaves, why now</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Small homes, small joys</h3>
+        <p>A generation living in smaller apartments, often renting rather than owning, found in plants a way to shape a space that's genuinely theirs — no permission or mortgage required.</p>
+      </div>
+      <div class="card">
+        <h3>A screen-free kind of care</h3>
+        <p>Checking on soil moisture or a new leaf unfurling is a rare task that can't be sped up, scrolled through, or automated — which is exactly its appeal.</p>
+      </div>
+      <div class="card">
+        <h3>Visible, gentle progress</h3>
+        <p>A new leaf is proof that patience worked. In a world of instant everything, plants reward the one skill that's gotten hardest to practice: waiting.</p>
+      </div>
+      <div class="card">
+        <h3>Low-stakes responsibility</h3>
+        <p>For people not ready for a pet or a garden plot, one small pot is an easy, forgiving way to practice keeping something else alive.</p>
+      </div>
+    </div>
+  </section>
+
+  <blockquote>a plant doesn't ask you to perform. it just needs light, water, and a little attention — which turns out to be a fairly rare kind of relationship these days.</blockquote>
+
+  <div class="divider">good beginner plants</div>
+
+  <section id="plants">
+    <h2><span class="qnum">CHAPTER TWO</span>Where to actually start</h2>
+    <p>Most first-plant heartbreak comes from starting with something fussy. These forgive a lot:</p>
+    <div class="plant-grid">
+      <span class="plant-chip">🌿 pothos</span>
+      <span class="plant-chip">🐍 snake plant</span>
+      <span class="plant-chip">🌱 spider plant</span>
+      <span class="plant-chip">☘️ ZZ plant</span>
+      <span class="plant-chip">🪴 peace lily</span>
+      <span class="plant-chip">🌵 jade plant</span>
+      <span class="plant-chip">🍃 philodendron</span>
+      <span class="plant-chip">🌾 areca palm</span>
+    </div>
+  </section>
+
+  <div class="divider">keeping it alive</div>
+
+  <section id="care">
+    <h2><span class="qnum">CHAPTER THREE</span>Five things that matter more than a green thumb</h2>
+    <ol class="steps">
+      <li>
+        <h3>Match the plant to your light, not the other way round</h3>
+        <p>Walk your home at midday and notice which spots actually get bright, indirect light — then shop for that light, not for the prettiest pot in the store.</p>
+      </li>
+      <li>
+        <h3>Underwater before you overwater</h3>
+        <p>Far more houseplants die from soggy roots than from thirst. Stick a finger into the soil — if the top inch is still damp, it can usually wait.</p>
+      </li>
+      <li>
+        <h3>Give the pot somewhere for water to go</h3>
+        <p>A drainage hole isn't optional — without one, even careful watering slowly drowns the roots from below.</p>
+      </li>
+      <li>
+        <h3>Expect a slow season</h3>
+        <p>Most plants barely grow through winter. A plant that "isn't doing anything" in colder months is often just resting, not dying.</p>
+      </li>
+      <li>
+        <h3>Turn it, every so often</h3>
+        <p>Plants lean toward their light source. A quarter-turn every week or two keeps growth even instead of lopsided.</p>
+      </li>
+    </ol>
+  </section>
+
+  <figure>
+    <svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="740" height="300" fill="#31462a"/>
+      <rect x="30" y="30" width="680" height="240" fill="#fbf8f1" rx="14"/>
+      <!-- pressed leaves / botanical specimen style -->
+      <g transform="translate(140,150)">
+        <path d="M0 -80 C-30 -60 -30 -20 0 80 C30 -20 30 -60 0 -80" fill="none" stroke="#4c6b3f" stroke-width="2"/>
+        <path d="M0 -70 L0 70" stroke="#4c6b3f" stroke-width="1.5"/>
+        <path d="M0 -40 L-18 -30 M0 -10 L-22 5 M0 20 L-18 35 M0 -40 L18 -30 M0 -10 L22 5 M0 20 L18 35" stroke="#4c6b3f" stroke-width="1"/>
+      </g>
+      <g transform="translate(370,150) rotate(8)">
+        <ellipse cx="0" cy="0" rx="26" ry="60" fill="none" stroke="#c17a54" stroke-width="2"/>
+        <path d="M0 -60 L0 60" stroke="#c17a54" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(590,150) rotate(-6)">
+        <path d="M0 -70 C-24 -40 -20 40 0 70 C20 40 24 -40 0 -70" fill="none" stroke="#6d8c5a" stroke-width="2"/>
+        <path d="M0 -60 L0 60" stroke="#6d8c5a" stroke-width="1.5"/>
+      </g>
+      <text x="370" y="250" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="18" fill="#54604a">specimens from a windowsill collection</text>
+    </svg>
+    <figcaption>even the "failures" — a dropped leaf, a lopsided stem — tend to feel gentler than most other hobbies' mistakes.</figcaption>
+  </figure>
+
+  <div class="divider">the deeper appeal</div>
+
+  <section id="deeper">
+    <h2><span class="qnum">CHAPTER FOUR</span>What people are really buying</h2>
+    <p>Ask a plant owner why they keep buying more and the honest answer is rarely "for the air quality," even though that gets mentioned. It's closer to this: caring for something outside yourself, on a small and manageable scale, turns out to be quietly good for people — a low-stakes rehearsal for patience, attention, and showing up consistently for something that can't say thank you.</p>
+    <p>Community gardens and plant-swap groups have grown alongside the windowsill trend too, turning a solitary hobby into a genuinely social one — cuttings traded at meetups, advice shared in local groups, a small ecosystem of people who all understand why you'd name a fern.</p>
+  </section>
+
+  <div class="checklist" style="max-width:520px; margin-left:auto; margin-right:auto;">
+    <li><span class="leaf-box">❧</span><span>Start with one plant, not five — it's easier to learn one set of needs well than juggle five you don't understand yet.</span></li>
+    <li><span class="leaf-box">❧</span><span>Ask before you buy: how much light does this actually get, honestly, in my home?</span></li>
+    <li><span class="leaf-box">❧</span><span>Don't panic over one yellow leaf — plants shed old growth normally as they grow new leaves.</span></li>
+    <li><span class="leaf-box">❧</span><span>Find one local plant group, online or in person — half of good plant care is borrowed from someone else's trial and error.</span></li>
+  </div>
+
+  <div class="divider">closing</div>
+
+  <section id="close">
+    <h2><span class="qnum">CHAPTER FIVE</span>A small, green kind of patience</h2>
+    <p>Nobody needs a houseplant. That's rather the point. In a life increasingly optimized, tracked, and rushed, a plant offers something delightfully useless and slow — a thing to notice, water, and wait on, with no deadline attached.</p>
+    <p>If this reader does anything, let it be this: bring home one easy plant this week, put it somewhere you'll actually walk past daily, and just watch what happens when you slow down enough to notice a leaf unfurl.</p>
+  </section>
+
 </div>
-
-<section class="lede">
-  <div class="wrap">
-    <div class="qtag"><span class="dot"></span>PRE-GAME</div>
-    <p class="big">Basketball is the rare major sport with a known birthday, a known inventor, and a written rulebook that still exists. Everything that followed — the dribble, the dunk, the three-point revolution, a global fanbase in the billions — was added on top of thirteen rules written to keep restless students busy indoors for a Massachusetts winter.</p>
-    <p class="measure">This page covers where the game came from, what the physics of a good shot actually looks like, how analytics rewired the sport from the inside, and how far the game has traveled from that first gymnasium. Nothing here is for sale — it's simply an account of the sport.</p>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- Q1 — ORIGINS -->
-<section>
-  <div class="wrap grid-2">
-    <div class="col-text">
-      <div class="qtag"><span class="dot"></span>Q1<span>— ORIGINS</span></div>
-      <h2>A problem, a gym, two peach baskets</h2>
-      <p>In December 1891, a Canadian physical education instructor named James Naismith was given an assignment at the YMCA Training School in Springfield, Massachusetts: invent an indoor game energetic enough to occupy a class of bored, restless young men between the football and baseball seasons, without the injuries that came from indoor football.</p>
-      <p>Naismith nailed two peach baskets to the balcony railings at opposite ends of the gym, wrote thirteen rules, and had his class play with a soccer ball. There was no dribbling in that first game — players advanced the ball only by passing — and because the baskets still had their bottoms, someone had to climb a ladder to retrieve the ball after every score. The final score of that first game was reportedly 1–0.</p>
-    </div>
-    <div class="col-img">
-      <figure class="photo">
-        <img src="https://docsteach.org/wp-content/uploads/documents/100444357825/primary_12917_20220627143459.jpg" alt="Dr. James Naismith with his first basketball team, Springfield College">
-      </figure>
-      <figcaption>James Naismith (center) with his first basketball team, Springfield, Massachusetts. Public domain, U.S. National Archives.</figcaption>
-    </div>
-  </div>
-  <div class="ledger">
-    <div class="ledger-row">
-      <div class="yr mono">1891</div>
-      <p>Naismith invents the game; nine players per side, peach-basket goals, no dribbling allowed.</p>
-    </div>
-    <div class="ledger-row">
-      <div class="yr mono">1897</div>
-      <p>Five players per side becomes the standard team size, replacing the original nine-a-side format.</p>
-    </div>
-    <div class="ledger-row">
-      <div class="yr mono">1936</div>
-      <p>Basketball debuts as an Olympic sport at the Berlin Games.</p>
-    </div>
-    <div class="ledger-row">
-      <div class="yr mono">1954</div>
-      <p>The NBA introduces a 24-second shot clock to stop teams from stalling with the ball, transforming the pace of the sport almost overnight.</p>
-    </div>
-    <div class="ledger-row">
-      <div class="yr mono">1979</div>
-      <p>The NBA adopts the three-point line after more than a decade of the American Basketball Association using it as a gimmick. Boston's Chris Ford makes the first one that October.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- Q2 — THE SHOT -->
-<section>
-  <div class="wrap grid-2 rev">
-    <div class="col-text">
-      <div class="qtag"><span class="dot"></span>Q2<span>— THE SHOT</span></div>
-      <h2>What a good shot actually looks like</h2>
-      <p>A basketball rim is 18 inches across; a basketball is about 9.5 inches in diameter — roughly twice the margin for error it looks like from the stands, but a margin that shrinks fast if the ball arrives at the wrong angle. Coaches and biomechanists generally agree the ideal entry angle for a shot is around 45 degrees: flat enough to carry, arced enough to use the rim's full width.</p>
-      <p>Backspin matters almost as much as angle. A ball rotating backward that clips the rim is more likely to drop softly through than a flat or side-spinning shot, which tends to deflect off at an unpredictable angle. This is part of why shooting form is taught so rigidly — wrist snap and follow-through control spin far more than raw arm strength does.</p>
-      <p>Even elite shooters miss more free throws than casual fans assume: the NBA's league-wide free-throw percentage has hovered in the high 70s for decades, from a completely unguarded 15-foot shot.</p>
-    </div>
-    <div class="col-img">
-      <figure class="photo">
-        <img src="https://images.pexels.com/photos/3260939/pexels-photo-3260939.jpeg?auto=compress&w=1000&h=1000&dpr=1" alt="A basketball player performing a dunk on an outdoor court">
-      </figure>
-      <figcaption>Shot mechanics scale from a free throw to a full-speed dunk — the arc and spin principles stay the same.</figcaption>
-    </div>
-  </div>
-  <div class="fact-grid">
-    <div class="fact">
-      <b class="num">45°</b>
-      <p>The commonly cited ideal entry angle for a jump shot — steep enough to use the full width of the rim.</p>
-    </div>
-    <div class="fact">
-      <b class="num">18"</b>
-      <p>Rim diameter — almost exactly double the width of the ball itself, leaving less margin than it appears.</p>
-    </div>
-    <div class="fact">
-      <b class="num">~77%</b>
-      <p>Typical NBA league-wide free-throw percentage: the sport's purest, and still frequently missed, shot.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- Q3 — ANALYTICS -->
-<section>
-  <div class="wrap">
-    <div class="qtag"><span class="dot"></span>Q3<span>— THE NUMBERS GAME</span></div>
-    <h2 style="max-width:720px;">How a stripe on the floor rewrote the sport</h2>
-    <p class="measure" style="margin-top:18px;">The three-point line existed in the NBA for over three decades before it fundamentally changed how the game was played. Its early years were treated as a curiosity — in the 1979–80 debut season, NBA teams attempted just 2.8 three-pointers a game and made only 28% of them.</p>
-    <p class="measure">What changed wasn't the rule — it was the arithmetic. Analysts eventually pointed out the obvious: a 33%-accurate three-pointer is worth exactly as much, on average, as a 50%-accurate two-pointer, and most mid-range shots were being made at lower rates than that. Starting roughly in the 2010s, teams reshaped their offenses around shots at the rim and from three, and away from the long two-point jumper that had defined the game for decades. League-wide three-point shooting now sits above 36%, and three-point volume has climbed for over a decade straight.</p>
-    <div class="diagram-wrap">
-      <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="10" width="380" height="360" fill="none" stroke="#3B424A" stroke-width="2"/>
-        <rect x="140" y="10" width="120" height="190" fill="none" stroke="#8B93A0" stroke-width="2"/>
-        <circle cx="200" cy="200" r="35" fill="none" stroke="#8B93A0" stroke-width="2"/>
-        <rect x="185" y="18" width="30" height="8" fill="none" stroke="#ECE6D8" stroke-width="2"/>
-        <circle cx="200" cy="42" r="4" fill="#CC8A3F"/>
-        <path d="M 40 10 L 40 130 A 160 160 0 0 0 360 130 L 360 10" fill="none" stroke="#CC8A3F" stroke-width="3"/>
-        <line x1="10" y1="10" x2="40" y2="10" stroke="#CC8A3F" stroke-width="3"/>
-        <line x1="360" y1="10" x2="390" y2="10" stroke="#CC8A3F" stroke-width="3"/>
-        <text x="200" y="150" fill="#8B93A0" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">KEY</text>
-        <text x="200" y="235" fill="#8B93A0" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">FT LINE</text>
-        <text x="200" y="120" fill="#CC8A3F" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">23'9" — TOP OF KEY</text>
-        <text x="65" y="60" fill="#CC8A3F" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">22' — CORNER</text>
-      </svg>
-      <div>
-        <div class="leg"><div class="sw" style="background:var(--wood);"></div>NBA three-point line</div>
-        <div class="leg"><div class="sw" style="background:var(--slate);"></div>Key, free-throw circle &amp; rim</div>
-        <div class="stat-line"><span>Top of key distance</span><span>23'9" / 7.24 m</span></div>
-        <div class="stat-line"><span>Corner three distance</span><span>22'0" / 6.7 m</span></div>
-        <div class="stat-line"><span>NBA three-point debut season</span><span>1979–80</span></div>
-        <div class="stat-line"><span>League 3PT attempts, 1979–80</span><span>2.8 / game</span></div>
-        <div class="stat-line"><span>League 3PT% today</span><span>~36%</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- Q4 — GLOBAL GAME -->
-<section>
-  <div class="wrap">
-    <div class="qtag"><span class="dot"></span>Q4<span>— THE GLOBAL GAME</span></div>
-    <div class="grid-2">
-      <div class="col-text">
-        <h2>From one gym to every continent</h2>
-        <p>Basketball needs almost nothing to play — a hoop, a ball, and a flat surface — which is a large part of why it spread further and faster than most sports Naismith's contemporaries would have recognized as rivals. It became an Olympic sport in 1936, and the women's game joined the Olympic program in 1976.</p>
-        <p>The sport's professional reach is no longer American in any simple sense: national leagues thrive across Europe, Australia, the Philippines, and China, and a large share of NBA rosters are now international. Outdoor courts — spread through parks, driveways, and blacktops with no formal league at all — remain the entry point for most people who ever pick up the sport.</p>
-      </div>
-      <div class="col-img">
-        <figure class="photo">
-          <img src="https://images.pexels.com/photos/2216232/pexels-photo-2216232.jpeg?auto=compress&w=1000&h=1000&dpr=1" alt="Two people playing basketball on an outdoor court in a park">
-        </figure>
-        <figcaption>Most of the world's basketball is played far from any arena.</figcaption>
-      </div>
-    </div>
-    <div class="globe-grid">
-      <div class="globe-card">
-        <h3>1936</h3>
-        <p>Men's basketball becomes an Olympic sport at the Berlin Games, with James Naismith himself in attendance.</p>
-      </div>
-      <div class="globe-card">
-        <h3>1976</h3>
-        <p>Women's basketball is added to the Olympic program at the Montreal Games.</p>
-      </div>
-      <div class="globe-card">
-        <h3>1992</h3>
-        <p>NBA players compete at the Olympics for the first time, fielding the "Dream Team" in Barcelona.</p>
-      </div>
-      <div class="globe-card">
-        <h3>1996</h3>
-        <p>The WNBA is founded, giving the women's professional game a dedicated North American league.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="tight">
-  <div class="wrap">
-    <div class="qtag"><span class="dot"></span>FINAL BUZZER</div>
-    <h2 style="max-width:680px;font-size:clamp(28px,3.2vw,40px);">A game still being rewritten</h2>
-    <p class="measure" style="margin-top:16px;">A little over a century separates the peach basket from the modern three-point offense, and the pace of change hasn't slowed. Rules are still adjusted, shooting styles still shift with the data, and the court a kid plays on today looks almost nothing like the one Naismith improvised — except for the one measurement nobody has ever touched: the rim, still exactly ten feet off the ground.</p>
-    <figure class="finish-media">
-      <img src="https://images.pexels.com/photos/4892123/pexels-photo-4892123.jpeg?auto=compress&w=1400" alt="Silhouettes of basketball players in a pickup game at dusk">
-    </figure>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
-    <div>An informational overview of basketball's history, mechanics, and global growth. No products, teams, or events are being promoted on this page.</div>
-    <div>Sources: Naismith Memorial Basketball Hall of Fame, NBA history archives, Olympics.com, U.S. National Archives.</div>
+    <span class="tag">❧ end of issue — the windowsill reader</span>
+    <p>figures referenced from National Gardening Association survey data and published horticultural-therapy research. treat this as a starting point for your own reading, not expert horticultural advice for a specific plant's condition.</p>
   </div>
 </footer>
 
