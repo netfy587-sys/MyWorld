@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basketball — An Informational Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181C;
+    --panel:#1D2227;
+    --panel-2:#242A30;
+    --cream:#ECE6D8;
+    --wood:#CC8A3F;
+    --wood-dim:#8A6535;
+    --line:#3B424A;
+    --slate:#8B93A0;
+    --chalk:#C9C2AE;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Inter', sans-serif;
+    font-size:16.5px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    margin:0;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    color:var(--cream);
+  }
+  p{margin:0 0 1.1em 0;color:var(--chalk);}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  .measure{max-width:640px;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* Quarter tag */
+  .qtag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.02em;
+    color:var(--wood);
+    margin-bottom:22px;
+  }
+  .qtag .dot{width:7px;height:7px;border-radius:50%;background:var(--wood);}
+  .qtag span{color:var(--slate);}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:94vh;
+    display:flex;
+    align-items:flex-end;
+  }
+  .hero img{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center 40%;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(21,24,28,0.25) 0%, rgba(21,24,28,0.55) 50%, rgba(21,24,28,0.97) 100%);
+  }
+  .hero-inner{
+    position:relative;
+    width:100%;
+    padding:0 32px 60px;
+    max-width:1120px;
+    margin:0 auto;
+  }
+  .hero-eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--wood);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(52px, 9vw, 118px);
+  }
+  .hero-sub{
+    margin-top:20px;
+    max-width:540px;
+    font-size:18px;
+    color:var(--chalk);
+  }
+  .stat-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:44px;
+    margin-top:46px;
+    padding-top:26px;
+    border-top:1px dashed var(--line);
+  }
+  .stat b{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:28px;
+    font-weight:600;
+    color:var(--cream);
+  }
+  .stat span{
+    display:block;
+    font-size:12.5px;
+    color:var(--slate);
+    margin-top:4px;
+  }
+
+  section{padding:100px 0;}
+  section.tight{padding:76px 0;}
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .grid-2.rev .col-img{order:2;}
+  .col-text h2{font-size:clamp(30px,3.6vw,46px);margin-bottom:22px;}
+  figure{margin:0;}
+  figcaption{font-size:13px;color:var(--slate);margin-top:10px;}
+  .photo{border-radius:2px;overflow:hidden;border:1px solid var(--line);}
+  .photo img{width:100%;height:100%;object-fit:cover;}
+
+  hr.rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  .lede{padding:90px 0 40px;}
+  .lede p.big{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:clamp(22px,2.6vw,30px);
+    font-weight:500;
+    line-height:1.42;
+    max-width:820px;
+    color:var(--cream);
+  }
+
+  /* Rule ledger (origins timeline) */
+  .ledger{
+    margin-top:36px;
+    border-top:1px solid var(--line);
+  }
+  .ledger-row{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:24px;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .ledger-row .yr{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--wood);
+    font-size:15px;
+    padding-top:2px;
+  }
+  .ledger-row p{margin:0;font-size:15px;}
+
+  /* Shot physics facts */
+  .fact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:44px;
+  }
+  .fact{
+    background:var(--panel);
+    padding:30px 26px;
+  }
+  .fact b.num{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:32px;
+    color:var(--wood);
+    margin-bottom:10px;
+  }
+  .fact p{font-size:14.5px;margin:0;color:var(--chalk);}
+
+  /* Court diagram section */
+  .diagram-wrap{
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:40px;
+    margin-top:44px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .diagram-wrap svg{width:100%;height:auto;}
+  .leg{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13.5px;
+    color:var(--chalk);
+    margin-bottom:10px;
+  }
+  .leg .sw{width:14px;height:14px;border-radius:3px;flex-shrink:0;}
+
+  .stat-line{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .stat-line span:last-child{font-family:'IBM Plex Mono', monospace;color:var(--wood);}
+
+  /* Global section cards */
+  .globe-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:20px;
+  }
+  .globe-card{background:var(--panel);padding:28px 26px;}
+  .globe-card h3{font-size:19px;margin-bottom:8px;}
+  .globe-card p{font-size:14.5px;margin:0;}
+
+  .finish-media{border:1px solid var(--line);overflow:hidden;margin-top:44px;}
+  .finish-media img{width:100%;max-height:440px;object-fit:cover;}
+
+  footer{padding:48px 0 64px;border-top:1px solid var(--line);}
+  footer .wrap{
+    display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    font-size:13px;color:var(--slate);
+  }
+
+  @media (max-width:820px){
+    .grid-2, .diagram-wrap{grid-template-columns:1fr;gap:30px;}
+    .grid-2.rev .col-img{order:0;}
+    .fact-grid, .globe-grid{grid-template-columns:1fr;}
+    section{padding:68px 0;}
+    .ledger-row{grid-template-columns:80px 1fr;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 22px;}
+    .hero-inner{padding:0 22px 40px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&w=1600&h=1400&dpr=1" alt="Silhouettes of basketball players jumping for the ball at sunset by the ocean">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">// AN INFORMATIONAL GUIDE</div>
+    <h1>Basketball</h1>
+    <p class="hero-sub">Invented in a single afternoon to solve a scheduling problem, and turned since into the most efficient shooting sport ever measured.</p>
+    <div class="stat-row">
+      <div class="stat"><b>1891</b><span>Year it was invented</span></div>
+      <div class="stat"><b>10 ft</b><span>Rim height, unchanged since</span></div>
+      <div class="stat"><b>23'9"</b><span>NBA three-point line, top of key</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="lede">
+  <div class="wrap">
+    <div class="qtag"><span class="dot"></span>PRE-GAME</div>
+    <p class="big">Basketball is the rare major sport with a known birthday, a known inventor, and a written rulebook that still exists. Everything that followed — the dribble, the dunk, the three-point revolution, a global fanbase in the billions — was added on top of thirteen rules written to keep restless students busy indoors for a Massachusetts winter.</p>
+    <p class="measure">This page covers where the game came from, what the physics of a good shot actually looks like, how analytics rewired the sport from the inside, and how far the game has traveled from that first gymnasium. Nothing here is for sale — it's simply an account of the sport.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- Q1 — ORIGINS -->
+<section>
+  <div class="wrap grid-2">
+    <div class="col-text">
+      <div class="qtag"><span class="dot"></span>Q1<span>— ORIGINS</span></div>
+      <h2>A problem, a gym, two peach baskets</h2>
+      <p>In December 1891, a Canadian physical education instructor named James Naismith was given an assignment at the YMCA Training School in Springfield, Massachusetts: invent an indoor game energetic enough to occupy a class of bored, restless young men between the football and baseball seasons, without the injuries that came from indoor football.</p>
+      <p>Naismith nailed two peach baskets to the balcony railings at opposite ends of the gym, wrote thirteen rules, and had his class play with a soccer ball. There was no dribbling in that first game — players advanced the ball only by passing — and because the baskets still had their bottoms, someone had to climb a ladder to retrieve the ball after every score. The final score of that first game was reportedly 1–0.</p>
+    </div>
+    <div class="col-img">
+      <figure class="photo">
+        <img src="https://docsteach.org/wp-content/uploads/documents/100444357825/primary_12917_20220627143459.jpg" alt="Dr. James Naismith with his first basketball team, Springfield College">
+      </figure>
+      <figcaption>James Naismith (center) with his first basketball team, Springfield, Massachusetts. Public domain, U.S. National Archives.</figcaption>
+    </div>
+  </div>
+  <div class="ledger">
+    <div class="ledger-row">
+      <div class="yr mono">1891</div>
+      <p>Naismith invents the game; nine players per side, peach-basket goals, no dribbling allowed.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="yr mono">1897</div>
+      <p>Five players per side becomes the standard team size, replacing the original nine-a-side format.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="yr mono">1936</div>
+      <p>Basketball debuts as an Olympic sport at the Berlin Games.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="yr mono">1954</div>
+      <p>The NBA introduces a 24-second shot clock to stop teams from stalling with the ball, transforming the pace of the sport almost overnight.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="yr mono">1979</div>
+      <p>The NBA adopts the three-point line after more than a decade of the American Basketball Association using it as a gimmick. Boston's Chris Ford makes the first one that October.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- Q2 — THE SHOT -->
+<section>
+  <div class="wrap grid-2 rev">
+    <div class="col-text">
+      <div class="qtag"><span class="dot"></span>Q2<span>— THE SHOT</span></div>
+      <h2>What a good shot actually looks like</h2>
+      <p>A basketball rim is 18 inches across; a basketball is about 9.5 inches in diameter — roughly twice the margin for error it looks like from the stands, but a margin that shrinks fast if the ball arrives at the wrong angle. Coaches and biomechanists generally agree the ideal entry angle for a shot is around 45 degrees: flat enough to carry, arced enough to use the rim's full width.</p>
+      <p>Backspin matters almost as much as angle. A ball rotating backward that clips the rim is more likely to drop softly through than a flat or side-spinning shot, which tends to deflect off at an unpredictable angle. This is part of why shooting form is taught so rigidly — wrist snap and follow-through control spin far more than raw arm strength does.</p>
+      <p>Even elite shooters miss more free throws than casual fans assume: the NBA's league-wide free-throw percentage has hovered in the high 70s for decades, from a completely unguarded 15-foot shot.</p>
+    </div>
+    <div class="col-img">
+      <figure class="photo">
+        <img src="https://images.pexels.com/photos/3260939/pexels-photo-3260939.jpeg?auto=compress&w=1000&h=1000&dpr=1" alt="A basketball player performing a dunk on an outdoor court">
+      </figure>
+      <figcaption>Shot mechanics scale from a free throw to a full-speed dunk — the arc and spin principles stay the same.</figcaption>
+    </div>
+  </div>
+  <div class="fact-grid">
+    <div class="fact">
+      <b class="num">45°</b>
+      <p>The commonly cited ideal entry angle for a jump shot — steep enough to use the full width of the rim.</p>
+    </div>
+    <div class="fact">
+      <b class="num">18"</b>
+      <p>Rim diameter — almost exactly double the width of the ball itself, leaving less margin than it appears.</p>
+    </div>
+    <div class="fact">
+      <b class="num">~77%</b>
+      <p>Typical NBA league-wide free-throw percentage: the sport's purest, and still frequently missed, shot.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- Q3 — ANALYTICS -->
+<section>
+  <div class="wrap">
+    <div class="qtag"><span class="dot"></span>Q3<span>— THE NUMBERS GAME</span></div>
+    <h2 style="max-width:720px;">How a stripe on the floor rewrote the sport</h2>
+    <p class="measure" style="margin-top:18px;">The three-point line existed in the NBA for over three decades before it fundamentally changed how the game was played. Its early years were treated as a curiosity — in the 1979–80 debut season, NBA teams attempted just 2.8 three-pointers a game and made only 28% of them.</p>
+    <p class="measure">What changed wasn't the rule — it was the arithmetic. Analysts eventually pointed out the obvious: a 33%-accurate three-pointer is worth exactly as much, on average, as a 50%-accurate two-pointer, and most mid-range shots were being made at lower rates than that. Starting roughly in the 2010s, teams reshaped their offenses around shots at the rim and from three, and away from the long two-point jumper that had defined the game for decades. League-wide three-point shooting now sits above 36%, and three-point volume has climbed for over a decade straight.</p>
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="380" height="360" fill="none" stroke="#3B424A" stroke-width="2"/>
+        <rect x="140" y="10" width="120" height="190" fill="none" stroke="#8B93A0" stroke-width="2"/>
+        <circle cx="200" cy="200" r="35" fill="none" stroke="#8B93A0" stroke-width="2"/>
+        <rect x="185" y="18" width="30" height="8" fill="none" stroke="#ECE6D8" stroke-width="2"/>
+        <circle cx="200" cy="42" r="4" fill="#CC8A3F"/>
+        <path d="M 40 10 L 40 130 A 160 160 0 0 0 360 130 L 360 10" fill="none" stroke="#CC8A3F" stroke-width="3"/>
+        <line x1="10" y1="10" x2="40" y2="10" stroke="#CC8A3F" stroke-width="3"/>
+        <line x1="360" y1="10" x2="390" y2="10" stroke="#CC8A3F" stroke-width="3"/>
+        <text x="200" y="150" fill="#8B93A0" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">KEY</text>
+        <text x="200" y="235" fill="#8B93A0" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">FT LINE</text>
+        <text x="200" y="120" fill="#CC8A3F" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">23'9" — TOP OF KEY</text>
+        <text x="65" y="60" fill="#CC8A3F" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">22' — CORNER</text>
+      </svg>
+      <div>
+        <div class="leg"><div class="sw" style="background:var(--wood);"></div>NBA three-point line</div>
+        <div class="leg"><div class="sw" style="background:var(--slate);"></div>Key, free-throw circle &amp; rim</div>
+        <div class="stat-line"><span>Top of key distance</span><span>23'9" / 7.24 m</span></div>
+        <div class="stat-line"><span>Corner three distance</span><span>22'0" / 6.7 m</span></div>
+        <div class="stat-line"><span>NBA three-point debut season</span><span>1979–80</span></div>
+        <div class="stat-line"><span>League 3PT attempts, 1979–80</span><span>2.8 / game</span></div>
+        <div class="stat-line"><span>League 3PT% today</span><span>~36%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- Q4 — GLOBAL GAME -->
+<section>
+  <div class="wrap">
+    <div class="qtag"><span class="dot"></span>Q4<span>— THE GLOBAL GAME</span></div>
+    <div class="grid-2">
+      <div class="col-text">
+        <h2>From one gym to every continent</h2>
+        <p>Basketball needs almost nothing to play — a hoop, a ball, and a flat surface — which is a large part of why it spread further and faster than most sports Naismith's contemporaries would have recognized as rivals. It became an Olympic sport in 1936, and the women's game joined the Olympic program in 1976.</p>
+        <p>The sport's professional reach is no longer American in any simple sense: national leagues thrive across Europe, Australia, the Philippines, and China, and a large share of NBA rosters are now international. Outdoor courts — spread through parks, driveways, and blacktops with no formal league at all — remain the entry point for most people who ever pick up the sport.</p>
+      </div>
+      <div class="col-img">
+        <figure class="photo">
+          <img src="https://images.pexels.com/photos/2216232/pexels-photo-2216232.jpeg?auto=compress&w=1000&h=1000&dpr=1" alt="Two people playing basketball on an outdoor court in a park">
+        </figure>
+        <figcaption>Most of the world's basketball is played far from any arena.</figcaption>
+      </div>
+    </div>
+    <div class="globe-grid">
+      <div class="globe-card">
+        <h3>1936</h3>
+        <p>Men's basketball becomes an Olympic sport at the Berlin Games, with James Naismith himself in attendance.</p>
+      </div>
+      <div class="globe-card">
+        <h3>1976</h3>
+        <p>Women's basketball is added to the Olympic program at the Montreal Games.</p>
+      </div>
+      <div class="globe-card">
+        <h3>1992</h3>
+        <p>NBA players compete at the Olympics for the first time, fielding the "Dream Team" in Barcelona.</p>
+      </div>
+      <div class="globe-card">
+        <h3>1996</h3>
+        <p>The WNBA is founded, giving the women's professional game a dedicated North American league.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="qtag"><span class="dot"></span>FINAL BUZZER</div>
+    <h2 style="max-width:680px;font-size:clamp(28px,3.2vw,40px);">A game still being rewritten</h2>
+    <p class="measure" style="margin-top:16px;">A little over a century separates the peach basket from the modern three-point offense, and the pace of change hasn't slowed. Rules are still adjusted, shooting styles still shift with the data, and the court a kid plays on today looks almost nothing like the one Naismith improvised — except for the one measurement nobody has ever touched: the rim, still exactly ten feet off the ground.</p>
+    <figure class="finish-media">
+      <img src="https://images.pexels.com/photos/4892123/pexels-photo-4892123.jpeg?auto=compress&w=1400" alt="Silhouettes of basketball players in a pickup game at dusk">
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>An informational overview of basketball's history, mechanics, and global growth. No products, teams, or events are being promoted on this page.</div>
+    <div>Sources: Naismith Memorial Basketball Hall of Fame, NBA history archives, Olympics.com, U.S. National Archives.</div>
+  </div>
+</footer>
+
+</body>
+</html>
